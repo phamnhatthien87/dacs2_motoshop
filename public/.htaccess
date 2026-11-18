@@ -1,0 +1,9 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+
+RewriteEngine On
+# Chỉ cho phép index.php làm điểm vào PHP trong public.
+RewriteRule ^(?!index\.php$).*\.php(?:/|$) - [F,NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

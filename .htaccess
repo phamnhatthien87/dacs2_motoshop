@@ -1,0 +1,5 @@
+# Bảo vệ code/config/database khi chạy dự án bên dưới htdocs.
+Options -Indexes
+RewriteEngine On
+RewriteRule ^$ public/ [R=302,L]
+RewriteRule ^(?!public(?:/|$)).+ - [F,L]
